@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPA Chat App</title>
+    <link rel="stylesheet" href="npm/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="npm/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div id="app" class="container">
+        <!-- Chat Box goes here -->
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div id="main-block" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+                <!-- inputs user name -->
+                <transition name="fade">
+                    <input-name v-bind:is-logged="isLogged" v-on:set-name="setName"></input-name>
+                </transition>
+
+                <!-- message list -->
+                <transition name="slide-fade">
+                    <div id="panel-messages" class="col-sm-12 col-md-12 col-lg-12 panel panel-default" v-show="isLogged">
+                        <div class="panel-heading">Chat box</div>
+                        <div class="panel-boby messages" id="messages">
+                            <ul>
+                                <li v-for="message in messages">
+                                    <message v-bind:message-data="message" v-bind:user-id="uuid"></message>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <!-- inputs new message -->
+                            <input-message v-on:send-message="sendMessage"></input-message>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+
+            <!-- user list -->
+            <div id="intel-block" class="col-md-4 col-lg-4">
+                <users v-bind:users="users"></users>
+            </div>
+        </div>
+    </div>
+
+    <script src="npm/jquery/dist/jquery.min.js"></script>
+    <script src="npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="npm/vue/dist/vue.js"></script>
+    <script src="npm/socket.io-client/dist/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

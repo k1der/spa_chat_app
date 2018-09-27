@@ -1,0 +1,61 @@
+.messages{
+	overflow: auto;
+	height: 500px;
+}
+
+.controls{
+	padding-top: 5px;
+}
+
+
+.fades-leave-to {
+  transition: opacity .5s
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .8s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+#app {
+  padding: 50px 40px;
+}
+
+#main-block {
+  height: 100vh;
+}
+
+@media (max-width:1000px) {
+  #app {
+    padding: 10px;
+  }
+  #app > div {
+    padding: 0px;
+  }
+  #intel-block {
+    display: none;
+  }
+  .messages {
+    height: calc(100% - 41px - 25px)
+  }
+}
+
+#panel-messages {
+  padding: 0px;
+  /* max-height: calc(100vh - 40px);
+  height: calc(100% - 40px); */
+}
+
+#panel-messages .panel-footer {
+  padding: 0px;
+}
+
