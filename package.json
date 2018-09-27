@@ -1,0 +1,28 @@
+{
+  "name": "spa_chat_app",
+  "version": "1.0.0",
+  "description": "Simple Page Chat Application with VueJS, NodeJS and SocketIO",
+  "author": "Thomas Bihan-Poudec <thomas.bihanpoudec@gmail.com",
+  "main": "server.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k1der/spa_chat_app"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "vuejs",
+    "socketio"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "dateformat": "^2.0.0",
+    "express": "^4.15.4",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "serve-favicon": "^2.4.3",
+    "socket.io": "^2.0.3",
+    "vue": "^2.4.2"
+  }
+}
